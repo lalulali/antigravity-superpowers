@@ -32,8 +32,18 @@ For each task:
 
 1. Mark as in_progress
 2. Follow each step exactly (plan has bite-sized steps)
-3. Run verifications as specified
-4. Mark as completed
+3. Design should follow design system document that is stored in docs/design-system. Create robust design library to be used all pages in the project to use.
+4. Run verifications as specified
+5. Mark as completed
+
+Design artifact:
+1. Write design system documentation — save to docs/design-system/<design system name>.md and commit
+  1. Documentation should be micro
+  2. You are only allowed to create the document if it doesn't exist and modified if it already exist
+  3. You are not allowed to modified unrelated content except the one that you want to add or modified
+  4. treat this document as a living artifact and the rest of the document. rewrite from scratch & oversimplify the document is not allowed and breaking the rules
+2. The content should be splitted into different section e.g. button, color, typography, etc.
+3. any changes to this document will reflect all documents
 
 ### Step 3: Report
 
