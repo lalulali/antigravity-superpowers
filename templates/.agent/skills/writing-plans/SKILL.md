@@ -2,7 +2,6 @@
 name: writing-plans
 description: Use when you have a spec or requirements for a multi-step task, before touching code
 ---
-
 # Writing Plans
 
 ## Overview
@@ -15,11 +14,13 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 **Context:** This should be run in a dedicated worktree (created by brainstorming skill).
 
-**Save plans to:** `docs/plans/YYYY-MM-DD-<feature-name>.md`
+**Save plans to:** `docs/plans/YYYY-MM-DD-<feature-name>-task[number].md`
+Each task should be written in a separated document. 
 
 ## Bite-Sized Task Granularity
 
 **Each step is one action (2-5 minutes):**
+
 - "Write the failing test" - step
 - "Run it to make sure it fails" - step
 - "Implement the minimal code to make the test pass" - step
@@ -88,6 +89,7 @@ git commit -m "feat: add specific feature"
 ````
 
 ## Remember
+
 - Exact file paths always
 - Complete code in plan (not "add validation")
 - Exact commands with expected output
@@ -102,6 +104,7 @@ After saving the plan, use a single execution path:
 **Next step: run `.agent/workflows/execute-plan.md` to execute this plan task-by-task in single-flow mode."**
 
 Execution requirements:
+
 - **Entry workflow:** `.agent/workflows/execute-plan.md`
 - **Execution skill:** `.agent/skills/executing-plans/SKILL.md`
 - **Enforced execution model:** `.agent/skills/single-flow-task-execution/SKILL.md`
