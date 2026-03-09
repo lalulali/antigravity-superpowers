@@ -43,7 +43,7 @@ Design artifact:
   3. You are not allowed to modified unrelated content except the one that you want to add or modified
   4. treat this document as a living artifact and the rest of the document. rewrite from scratch & oversimplify the document is not allowed and breaking the rules
 2. The content should be splitted into different section e.g. button, color, typography, etc.
-3. any changes to this document will reflect all documents
+3. any changes to this document will reflect all pages.
 
 ### Step 3: Report
 
