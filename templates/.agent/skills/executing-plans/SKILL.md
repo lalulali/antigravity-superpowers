@@ -2,7 +2,6 @@
 name: executing-plans
 description: Use when you have a written implementation plan and need to execute it in Antigravity single-flow mode
 ---
-
 # Executing Plans
 
 ## Overview
@@ -27,23 +26,26 @@ Load plan, review critically, execute tasks in batches, report for review betwee
 ### Step 2: Execute Batch
 
 **Default: First 3 tasks**
+if user mention which task they want to create first, you must fulfill user request.
+If the user request unordered task, kindly inform user to start from the beginning
 
 For each task:
 
 1. Mark as in_progress
-2. Follow each step exactly (plan has bite-sized steps)
+2. Follow each step exactly (Read the plan document for the task you are working on—each plan contains bite-sized steps. If you are unsure which plan document to read, ask the user. Do not assume.)
 3. Design should follow design system document that is stored in docs/design-system. Create robust design library to be used all pages in the project to use.
 4. Run verifications as specified
 5. Mark as completed
 
 Design artifact:
-1. Write design system documentation — save to docs/design-system/<design system name>.md and commit
-  1. Documentation should be micro
-  2. You are only allowed to create the document if it doesn't exist and modified if it already exist
-  3. You are not allowed to modified unrelated content except the one that you want to add or modified
-  4. treat this document as a living artifact and the rest of the document. rewrite from scratch & oversimplify the document is not allowed and breaking the rules
-2. The content should be splitted into different section e.g. button, color, typography, etc.
-3. any changes to this document will reflect all pages.
+
+1. Write design system documentation — save to docs/design-system/`<design system name>`.md and commit
+2. Documentation should be micro
+3. You are only allowed to create the document if it doesn't exist and modified if it already exist
+4. You are not allowed to modified unrelated content except the one that you want to add or modified
+5. treat this document as a living artifact and the rest of the document. rewrite from scratch & oversimplify the document is not allowed and breaking the rules
+6. The content should be splitted into different section e.g. button, color, typography, etc.
+7. any changes to this document will reflect all pages.
 
 ### Step 3: Report
 
