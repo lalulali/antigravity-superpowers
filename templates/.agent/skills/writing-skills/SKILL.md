@@ -9,7 +9,7 @@ description: Use when creating new skills, editing existing skills, or verifying
 
 **Writing skills IS Test-Driven Development applied to process documentation.**
 
-**Personal skills live in agent-specific directories (`~/.gemini/skills` for Antigravity)**
+**Local project skills live in `.agent/skills/custom-skills` for newly generated skills. This ensures they are project-specific and discovered by the agent in future sessions.**
 
 You write test cases (pressure scenarios with explicit task execution), watch them fail (baseline behavior), write the skill (documentation), watch tests pass (agents comply), and refactor (close loopholes).
 
@@ -77,7 +77,7 @@ API docs, syntax guides, tool documentation (office docs)
 ## Directory Structure
 
 ```
-skills/
+.agent/skills/custom-skills/
   skill-name/
     SKILL.md              # Main reference (required)
     supporting-file.*     # Only if needed

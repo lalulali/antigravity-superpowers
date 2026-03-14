@@ -92,19 +92,19 @@ echo "Checking frontmatter..."
 for skill in "${required_skills[@]}"; do
   file="$AGENT_DIR/skills/$skill/SKILL.md"
 
-  if rg -q '^---$' "$file"; then
+  if grep -q "^---$" "$file"; then
     pass "$skill has frontmatter delimiters"
   else
     fail "$skill missing frontmatter delimiters"
   fi
 
-  if rg -q '^name:\s*[^[:space:]].*$' "$file"; then
+  if grep -Eq "^name:[[:space:]]*[^[:space:]].*$" "$file"; then
     pass "$skill has name field"
   else
     fail "$skill missing name field"
   fi
 
-  if rg -q '^description:\s*[^[:space:]].*$' "$file"; then
+  if grep -Eq "^description:[[:space:]]*[^[:space:]].*$" "$file"; then
     pass "$skill has description field"
   else
     fail "$skill missing description field"
@@ -127,7 +127,7 @@ legacy_patterns=(
 )
 
 for pattern in "${legacy_patterns[@]}"; do
-  if rg -q "$pattern" "$AGENT_DIR/skills"; then
+  if grep -rq "$pattern" "$AGENT_DIR/skills"; then
     fail "Legacy pattern found in skills: $pattern"
   else
     pass "Legacy pattern absent: $pattern"
@@ -141,7 +141,7 @@ mapping_checks=(
   'Task.*task_boundary'
   'browser_subagent'
   'Skill.*view_file'
-  'TodoWrite.*docs/plans/task\.md'
+  'TodoWrite.*docs/plans/.*task\.md'
   'run_command'
   'grep_search'
   'find_by_name'
@@ -149,7 +149,7 @@ mapping_checks=(
 )
 
 for pattern in "${mapping_checks[@]}"; do
-  if rg -q "$pattern" "$AGENT_DIR/AGENTS.md"; then
+  if grep -Eq "$pattern" "$AGENT_DIR/AGENTS.md"; then
     pass "AGENTS includes mapping: $pattern"
   else
     fail "AGENTS missing mapping: $pattern"

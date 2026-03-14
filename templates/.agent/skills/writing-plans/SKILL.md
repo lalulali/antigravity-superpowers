@@ -14,8 +14,9 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 **Context:** This should be run in a dedicated worktree (created by brainstorming skill).
 
-**Save plans to:** `docs/plans/YYYY-MM-DD-<feature-name>-task[number].md`
-Each task should be written in a separated document. 
+**Save plans to:** `docs/plans/<order-number>-<feature-name>/<feature-name>-task-<task-number>.md`
+Each task should be written in a separated document.
+Inside task file only consists of 1 single task with multiple steps, If there are more than 1 task, split into multiple documents
 
 ## Bite-Sized Task Granularity
 
@@ -100,7 +101,7 @@ git commit -m "feat: add specific feature"
 
 After saving the plan, use a single execution path:
 
-**"Plan complete and saved to `docs/plans/<filename>.md`.**
+**"Plan complete and saved to `docs/plans/<order-number>-<feature-name>/<feature-name>-task-<task-number>.md`.**
 **Next step: run `.agent/workflows/execute-plan.md` to execute this plan task-by-task in single-flow mode."**
 
 Execution requirements:
@@ -108,4 +109,4 @@ Execution requirements:
 - **Entry workflow:** `.agent/workflows/execute-plan.md`
 - **Execution skill:** `.agent/skills/executing-plans/SKILL.md`
 - **Enforced execution model:** `.agent/skills/single-flow-task-execution/SKILL.md`
-- **Tracking:** update `<project-root>/docs/plans/task.md` (table-only tracker)
+- **Tracking:** update `docs/plans/<order-number>-<feature-name>/task.md` (table-only tracker)

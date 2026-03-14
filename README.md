@@ -105,7 +105,7 @@ The CLI copies a complete `.agent` profile into your project root. Once initiali
 1. **Session starts** — loads `.agent/AGENTS.md` rules and `using-superpowers` skill
 2. **Each request gets routed** to the most relevant skill
 3. **Design work** flows through brainstorming → planning → execution
-4. **Every task** is tracked in `docs/plans/task.md` (created at runtime)
+4. **Every task** is tracked in `docs/plans/<plan-folder>/task.md` (created at runtime)
 5. **Nothing is marked done** without running verification commands first
 
 ```
@@ -147,7 +147,7 @@ The one notable structural change. The original Superpowers dispatches multiple 
 |              | Approach                                                                            |
 | ------------ | ----------------------------------------------------------------------------------- |
 | **Original** | `TodoWrite` tool                                                                    |
-| **Port**     | Live table at `<project-root>/docs/plans/task.md` (created at runtime, not bundled) |
+| **Port**     | Live table at `docs/plans/<plan-folder>/task.md` (created at runtime, not bundled) |
 
 ### Tool & Platform Vocabulary
 
