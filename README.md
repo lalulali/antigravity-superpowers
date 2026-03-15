@@ -46,7 +46,7 @@ This port keeps **12 out of 14 original skills intact** and consolidates the rem
 | Skill                            | Description                                             |
 | -------------------------------- | ------------------------------------------------------- |
 | `brainstorming`                  | Structured exploration before committing to an approach |
-| `writing-plans`                  | Detailed, step-by-step implementation plans             |
+| `writing-plans`                  | Detailed implementation plans with user stories for context |
 | `executing-plans`                | Disciplined plan execution with progress tracking       |
 | `single-flow-task-execution`     | Ordered task decomposition with review gates _(new)_    |
 | `test-driven-development`        | Write tests first, implement second                     |
