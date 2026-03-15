@@ -51,6 +51,9 @@ Inside task file only consists of 1 single task with multiple steps, If there ar
 ````markdown
 ### Task N: [Component Name]
 
+**User Story:**
+As a [user type], I want to [action] so that [benefit].
+
 **Files:**
 - Create: `exact/path/to/file.py`
 - Modify: `exact/path/to/existing.py:123-145`
