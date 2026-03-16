@@ -20,6 +20,8 @@ Inside task file only consists of 1 single task with multiple steps, If there ar
 
 ## Bite-Sized Task Granularity
 
+**When creating a task, the task should be as detailed and complete as possible.**
+
 **Each step is one action (2-5 minutes):**
 
 - "Write the failing test" - step
