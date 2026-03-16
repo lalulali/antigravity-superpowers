@@ -21,6 +21,7 @@ Inside task file only consists of 1 single task with multiple steps, If there ar
 ## Bite-Sized Task Granularity
 
 **When creating a task, the task should be as detailed and complete as possible.**
+Provide exact code snippets for both implementation and tests. Avoid placeholders or vague instructions like `"add validation"`.
 
 **Each step is one action (2-5 minutes):**
 
