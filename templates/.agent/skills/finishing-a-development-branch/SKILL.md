@@ -193,6 +193,7 @@ git worktree remove <worktree-path>
 - Merge without verifying tests on result
 - Delete work without confirmation
 - Force-push without explicit request
+- Automatically push commits to a remote repository without user choice
 
 **Always:**
 
