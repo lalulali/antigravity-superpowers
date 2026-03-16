@@ -57,6 +57,9 @@ Provide exact code snippets for both implementation and tests. Avoid placeholder
 **User Story:**
 As a [user type], I want to [action] so that [benefit].
 
+**Depends On:** [Task M / Step X] (Specify task/step dependencies, e.g., Task 1)
+**Complexity:** [Low / Medium / High]
+
 **Files:**
 - Create: `exact/path/to/file.py`
 - Modify: `exact/path/to/existing.py:123-145`
@@ -102,6 +105,8 @@ git commit -m "feat: add specific feature"
 - Exact commands with expected output
 - Reference relevant skills with @ syntax
 - DRY, YAGNI, TDD, frequent commits
+- **Manage Dependencies:** Clearly state task and step dependencies. If a user runs a requirement before previous tasks finished, tell them to complete the required task first.
+- **Step Complexity:** Include complexity information for tasks and steps to inform the user of effort estimates.
 
 ## Execution Handoff
 

@@ -47,7 +47,7 @@ This port keeps **12 out of 14 original skills intact**, consolidates 2 into a s
 | -------------------------------- | ------------------------------------------------------- |
 | `brainstorming`                  | Structured exploration before committing to an approach |
 | `writing-requirements`           | Structured requirements, user stories, and acceptance criteria |
-| `writing-plans`                  | Detailed implementation plans with user stories for context |
+| `writing-plans`                  | Detailed plans with user stories, dependencies, and complexity |
 | `executing-plans`                | Disciplined plan execution with progress tracking       |
 | `single-flow-task-execution`     | Ordered task decomposition with review gates _(new)_    |
 | `test-driven-development`        | Write tests first, implement second                     |

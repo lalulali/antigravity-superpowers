@@ -27,7 +27,7 @@ Load plan, review critically, execute tasks in batches, report for review betwee
 
 **Default: First 3 tasks**
 if user mention which task they want to create first, you must fulfill user request.
-If the user request unordered task, kindly inform user to start from the beginning
+If the user requests a task that has incomplete dependencies (or previous tasks are not finished), kindly inform them that they must complete the required task/previous tasks first.
 
 For each task:
 
