@@ -1,8 +1,8 @@
 ---
-name: requirement-gathering
+name: writing-requirements
 description: Use this to gather detailed requirements, refine user stories, and define acceptance criteria (using Gherkin) before creating an implementation plan. Optional but recommended for complex features.
 ---
-# Requirement Gathering
+# Writing Requirements
 
 ## Overview
 
@@ -12,7 +12,7 @@ Document everything clearly with **Glossaries**, rigid **User Stories**, and **G
 
 Assume the executing engineer needs absolute clarity and detailed scope.
 
-**Announce at start:** "I'm using the requirement-gathering skill to document detailed requirements."
+**Announce at start:** "I'm using the writing-requirements skill to document detailed requirements."
 
 **Save documents to:** `docs/plans/<order-number>-<feature-name>/requirements.md`
 

@@ -21,7 +21,7 @@ flowchart TD
 ```
 
 - **Brainstorming**: `.agent/workflows/brainstorm.md`
-- **Requirement Gathering**: `.agent/workflows/requirement-gathering.md`
+- **Writing Requirements**: `.agent/workflows/write-requirements.md`
 - **Write Plan**: `.agent/workflows/write-plan.md`
 
 ## Core Rules

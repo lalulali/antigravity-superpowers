@@ -28,7 +28,7 @@ You MUST create a task for each of these items and complete them in order:
 3. **Propose 2-3 approaches** — with trade-offs and your recommendation
 4. **Present design** — in sections scaled to their complexity, get user approval after each section
 5. **Write design doc** — save to `docs/plans/YYYY-MM-DD-<topic>-design.md` and commit
-6. **Transition to implementation** — invoke requirement-gathering (or writing-plans) skill to create specification/plan
+6. **Transition to implementation** — invoke writing-requirements (or writing-plans) skill to create specification/plan
 
 ## Process Flow
 
@@ -41,7 +41,7 @@ digraph brainstorming {
     "User approves design?" [shape=diamond];
     "Write design doc" [shape=box];
     "Need requirement gathering?" [shape=diamond];
-    "Invoke requirement-gathering skill" [shape=doublecircle];
+    "Invoke writing-requirements skill" [shape=doublecircle];
     "Invoke writing-plans skill" [shape=doublecircle];
 
     "Explore project context" -> "Ask clarifying questions";
@@ -51,12 +51,12 @@ digraph brainstorming {
     "User approves design?" -> "Present design sections" [label="no, revise"];
     "User approves design?" -> "Write design doc" [label="yes"];
     "Write design doc" -> "Need requirement gathering?";
-    "Need requirement gathering?" -> "Invoke requirement-gathering skill" [label="yes"];
+    "Need requirement gathering?" -> "Invoke writing-requirements skill" [label="yes"];
     "Need requirement gathering?" -> "Invoke writing-plans skill" [label="no"];
 }
 ```
 
-**The terminal state is invoking requirement-gathering or writing-plans.** Do NOT invoke frontend-design, mcp-builder, or any other implementation skill. The ONLY skills you invoke after brainstorming are requirement-gathering or writing-plans.
+**The terminal state is invoking writing-requirements or writing-plans.** Do NOT invoke frontend-design, mcp-builder, or any other implementation skill. The ONLY skills you invoke after brainstorming are writing-requirements or writing-plans.
 
 ## The Process
 
@@ -87,7 +87,7 @@ digraph brainstorming {
 - Commit the design document to git
 
 **Implementation:**
-- Invoke the `requirement-gathering` skill to flesh out detailed acceptance criteria, or go directly to `writing-plans` to create the implementation plan.
+- Invoke the `writing-requirements` skill to flesh out detailed acceptance criteria, or go directly to `writing-plans` to create the implementation plan.
 - Do NOT invoke other implementation skills.
 
 ## Key Principles
