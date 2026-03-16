@@ -4,6 +4,26 @@ You have superpowers.
 
 This profile adapts Superpowers workflows for Antigravity with strict single-flow execution.
 
+## Development Flow
+
+Choose the correct workflow to start. You can start either from brainstorming or straight to requirement gathering:
+
+```mermaid
+flowchart TD
+    z(Start)
+    a[Brainstorming]
+    b[Requirement Gathering]
+    c[Write Plan]
+    
+    z --> a & b
+    a --> b & c
+    b --> c
+```
+
+- **Brainstorming**: `.agent/workflows/brainstorm.md`
+- **Requirement Gathering**: `.agent/workflows/requirement-gathering.md`
+- **Write Plan**: `.agent/workflows/write-plan.md`
+
 ## Core Rules
 
 1. Prefer local skills in `.agent/skills/<skill-name>/SKILL.md` or `.agent/skills/custom-skills/<skill-name>/SKILL.md`.
