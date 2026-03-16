@@ -32,6 +32,7 @@ flowchart TD
 4. Track checklist progress in `<project-root>/docs/plans/<order-number>-<feature-name>/task.md` (table-only live tracker).
 5. Keep changes scoped to the requested task and verify before completion claims.
 6. You are building a design system and must implement design language & uniformity across the page. Changes in design should be reflected to all the pages accross the system
+7. Do NOT automatically push commits to remote branches. Wait for explicit user request or follow `.agent/skills/finishing-a-development-branch/SKILL.md` at the end of development.
 
 ## Tool Translation Contract
 
