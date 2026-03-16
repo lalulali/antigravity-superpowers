@@ -35,17 +35,18 @@ The original Superpowers repo doesn't support Antigravity, and there's no offici
 
 This is my attempt to bring the full Superpowers skill set to Antigravity — as close to the original as possible. The goal was never to fork and diverge; it was to translate just enough to make everything work natively on a different platform. Superpowers skills bring real structure to AI-assisted development — brainstorming before implementation, planning before coding, verification before completion claims — and that discipline shouldn't be locked to one platform.
 
-This port keeps **12 out of 14 original skills intact** and consolidates the remaining 2 into a single new skill that fits Antigravity's execution model. Every skill preserves its original intent, logic, and flow — only the platform-specific references, tool names, and execution primitives have been adapted.
+This port keeps **12 out of 14 original skills intact**, consolidates 2 into a single new skill (`single-flow-task-execution`), and adds `writing-requirements` to better support upfront definition mapping. Every skill preserves its original intent, logic, and flow — only the platform-specific references, tool names, and execution primitives have been adapted.
 
 ---
 
 ## What's Included
 
-**13 skills** covering the full development lifecycle:
+**14 skills** covering the full development lifecycle:
 
 | Skill                            | Description                                             |
 | -------------------------------- | ------------------------------------------------------- |
 | `brainstorming`                  | Structured exploration before committing to an approach |
+| `writing-requirements`           | Structured requirements, user stories, and acceptance criteria |
 | `writing-plans`                  | Detailed implementation plans with user stories for context |
 | `executing-plans`                | Disciplined plan execution with progress tracking       |
 | `single-flow-task-execution`     | Ordered task decomposition with review gates _(new)_    |
@@ -104,26 +105,28 @@ The CLI copies a complete `.agent` profile into your project root. Once initiali
 
 1. **Session starts** — loads `.agent/AGENTS.md` rules and `using-superpowers` skill
 2. **Each request gets routed** to the most relevant skill
-3. **Design work** flows through brainstorming → planning → execution
+3. **Design work** flows through brainstorming → writing requirements → planning → execution
 4. **Every task** is tracked in `.artifacts/plans/<plan-folder>/task.md` (created at runtime)
 5. **Nothing is marked done** without running verification commands first
 
-```
-Session Start → Load AGENTS.md → Load using-superpowers
-                                        ↓
-                              Route to relevant skill
-                                        ↓
-                          ┌─── Design change? ───┐
-                          │ yes                   │ no
-                     Brainstorm            Single-flow execution
-                          ↓                       ↓
-                    Writing plans          Verify before completion
-                          ↓                       ↓
-                  Single-flow execution   Finish branch
-                          ↓
-                  Verify before completion
-                          ↓
-                     Finish branch
+```mermaid
+flowchart TD
+    Start([Session Start]) --> Init[Load AGENTS.md & using-superpowers]
+    Init --> Route[Route to relevant skill]
+    Route --> Decision{Design change?}
+    
+    Decision -- "yes" --> B[Brainstorming]
+    Decision -- "yes" --> R[Writing Requirements]
+    
+    B --> R
+    B --> P[Writing plans]
+    R --> P
+    
+    P --> E[Single-flow execution]
+    
+    Decision -- "no" --> E
+    E --> V[Verify before completion]
+    V --> F[Finish branch]
 ```
 
 ---
