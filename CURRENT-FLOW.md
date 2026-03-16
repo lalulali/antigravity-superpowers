@@ -9,7 +9,7 @@ This document explains the active workflow used by the Antigravity profile in th
 3. Before any action, check whether a relevant skill should be loaded from:
    - `.agent/skills/<skill-name>/SKILL.md` (preferred)
    - `~/.gemini/skills/<skill-name>/SKILL.md` (fallback)
-4. Ensure `<project-root>/docs/plans/task.md` exists as a list-only table (no instructions).
+4. Ensure `<project-root>/.artifacts/plans/task.md` exists as a list-only table (no instructions).
 
 ## 2) Skill-First Routing
 
@@ -17,7 +17,7 @@ For each user request:
 
 1. Identify the best matching skill.
 2. Announce and follow that skill.
-3. If the skill has a checklist, track progress in `<project-root>/docs/plans/task.md`.
+3. If the skill has a checklist, track progress in `<project-root>/.artifacts/plans/task.md`.
 
 ## 3) Design Before Implementation
 
@@ -26,14 +26,14 @@ If the request involves creating/changing behavior:
 1. Run `brainstorming`.
 2. Explore context and ask clarifying questions.
 3. Propose approaches and get approval.
-4. Write design doc to `docs/plans/YYYY-MM-DD-<topic>-design.md`.
+4. Write design doc to `.artifacts/plans/YYYY-MM-DD-<topic>-design.md`.
 5. Move to `writing-plans`.
 
 ## 4) Planning Stage
 
 `writing-plans` creates a detailed implementation plan:
 
-1. Save plan to `docs/plans/YYYY-MM-DD-<feature-name>.md`.
+1. Save plan to `.artifacts/plans/YYYY-MM-DD-<feature-name>.md`.
 2. Break work into small, verifiable steps.
 3. Include exact files, commands, and expected outputs.
 4. Handoff to execution via `.agent/workflows/execute-plan.md` (single entrypoint).
@@ -47,7 +47,7 @@ Core execution rules from `.agent/AGENTS.md` and `single-flow-task-execution`:
 2. One coding execution thread at a time.
 3. Use `task_boundary` for coding tasks.
 4. Use `browser_subagent` only for browser-specific tasks.
-5. Update `<project-root>/docs/plans/task.md` on every task state change.
+5. Update `<project-root>/.artifacts/plans/task.md` on every task state change.
 
 Per-task loop:
 

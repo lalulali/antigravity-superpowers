@@ -33,7 +33,7 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 **How it works in skills:**
 - Require announcements: "Announce skill usage"
 - Force explicit choices: "Choose A, B, or C"
-- Use tracking: update `<project-root>/docs/plans/task.md` for checklists (table-only tracker)
+- Use tracking: update `<project-root>/.artifacts/plans/task.md` for checklists (table-only tracker)
 
 **When to use:**
 - Ensuring skills are actually followed
@@ -80,7 +80,7 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 
 **Example:**
 ```markdown
-✅ Checklists without `<project-root>/docs/plans/task.md` tracking = steps get skipped. Every time.
+✅ Checklists without `<project-root>/.artifacts/plans/task.md` tracking = steps get skipped. Every time.
 ❌ Some people find task tracking helpful for checklists.
 ```
 

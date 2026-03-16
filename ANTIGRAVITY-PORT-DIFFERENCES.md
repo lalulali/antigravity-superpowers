@@ -7,9 +7,10 @@ This document lists the current differences between:
 
 ## 1) High-Level Delta
 
-- Skill count changed from **14** (original) to **13** (port).
-- Port keeps 12 original skill names, removes 2, and adds:
-  - `single-flow-task-execution` (new Antigravity-only execution skill, consolidates content from the removed `dispatching-parallel-agents` and `subagent-driven-development`)
+- Skill count remains at **14** (port matches original total, but with composition changes).
+- Port keeps 12 original skill names, removes 2, and adds 2:
+  - `single-flow-task-execution` (new execution skill, consolidates removed parallel skills)
+  - `writing-requirements` (new skill added to support upfront requirement definition with structured user stories & Gherkin criteria)
 - Removed skills:
   - `dispatching-parallel-agents` — decomposition pattern merged into `single-flow-task-execution`
   - `subagent-driven-development` — two-stage review loop merged into `single-flow-task-execution`
@@ -20,27 +21,33 @@ This document lists the current differences between:
 - Legacy platform/tool vocabulary was translated to Antigravity equivalents:
   - `Claude/Claude Code` -> `Antigravity`
   - `Skill tool` -> `view_file`
-  - `TodoWrite` -> update `<project-root>/docs/plans/task.md`
+  - `TodoWrite` -> update `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md`
   - `superpowers:<skill>` references -> local `.agent/skills/.../SKILL.md`
 
 ## 2) Task Tracking Model Differences
 
 - Original skills used `TodoWrite` semantics.
-- Port uses project runtime file: `<project-root>/docs/plans/task.md`.
+- Port uses project runtime file: `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md`.
 - Port includes `.agent/task.md` as a **template/instruction reference** only.
 - Live tracker requirements in the port:
-  - lives at project root `docs/plans/task.md`
+  - lives at feature folder `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md`
   - table-only tracker (no prose/instructions)
-  - not packaged as `templates/.agent/docs/plans/task.md`
+  - not packaged as `templates/.agent/.artifacts/plans/task.md`
 
 ## 3) Skill-by-Skill Differences
+
+## New Skills Added (Antigravity-Only)
+
+- `writing-requirements` (NEW)
+  - Focuses on gathering structured requirements (User Stories, Acceptance Criteria in Gherkin format) before planning.
+  - Integrates with brainstorming and implementation flow.
 
 ## Major Behavioral Rewrites
 
 - `single-flow-task-execution` (NEW — consolidated from 3 sources)
   - Merges content from original `dispatching-parallel-agents` (task decomposition + queuing) and `subagent-driven-development` (two-stage review loop).
   - Strict single-flow execution with `task_boundary`, review gates retained.
-  - Progress tracking via `<project-root>/docs/plans/task.md`.
+  - Progress tracking via `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md`.
   - Review prompt templates (`implementer-prompt.md`, `spec-reviewer-prompt.md`, `code-quality-reviewer-prompt.md`) moved into this skill directory.
 
 - `requesting-code-review`
@@ -52,23 +59,24 @@ This document lists the current differences between:
   - Original handoff: subagent-driven vs parallel-session via `superpowers:*`.
   - Port handoff: `single-flow-task-execution` vs `.agent/skills/executing-plans/SKILL.md`.
   - Plan header updated for Antigravity-required execution skill path.
+  - **New rules added:** requires detailed task definition with mandatory User Stories, and separated documents for each task item.
 
 - `executing-plans`
   - Original: creates/uses `TodoWrite`; integrates with `superpowers:*` skills.
-  - Port: updates `<project-root>/docs/plans/task.md` and uses local `.agent/skills` references.
+  - Port: updates `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md` and uses local `.agent/skills` references.
   - Adds explicit `task_boundary`/`browser_subagent` execution rule.
 
 ## Targeted Adaptations (Not Full Rewrites)
 
 - `using-superpowers`
   - Skill loading switched to `view_file`.
-  - Checklist tracking switched to project-root `docs/plans/task.md`.
+  - Checklist tracking switched to `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md`.
   - Adds explicit instruction to create tracker file if missing (table-only format).
 
 - `writing-skills`
   - Platform references and personal skill paths changed to Antigravity style.
   - Required background references changed from `superpowers:*` to local `.agent/skills` paths.
-  - Checklist tracking text updated to project-root table-only tracker.
+  - Checklist tracking text updated to the table-only tracker in the feature folder.
 
 - `systematic-debugging`
   - Related skill references changed from `superpowers:*` to local `.agent/skills/...`.
@@ -81,7 +89,7 @@ This document lists the current differences between:
   - Style violation example changed from `CLAUDE.md` violation to `.agent/AGENTS.md` violation.
 
 - `writing-skills/persuasion-principles.md`
-  - `TodoWrite` examples updated to `<project-root>/docs/plans/task.md` tracking wording.
+  - `TodoWrite` examples updated to `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md` tracking wording.
 
 ## Mostly Preserved Skills (Behavior Intact, Terminology/Path Normalization)
 
@@ -89,6 +97,7 @@ This document lists the current differences between:
 - `test-driven-development`
 - `verification-before-completion`
 - `finishing-a-development-branch`
+  - Preserved core intent, but **adds strict rule forbidding automatic pushes to remote branches** without explicit user request.
 
 These keep the original core process intent, with Antigravity naming/path normalization where needed.
 
@@ -117,4 +126,4 @@ The Antigravity port adds automated profile checks that the original skill libra
 - Frontmatter validation (`name`, `description`)
 - Legacy-instruction pattern detection (e.g., old `superpowers:`/Task tool phrasing)
 - AGENTS mapping contract checks
-- Guard that packaged runtime tracker (`templates/.agent/docs/plans/task.md`) is absent
+- Guard that packaged runtime tracker (`templates/.agent/.artifacts/plans/task.md`) is absent

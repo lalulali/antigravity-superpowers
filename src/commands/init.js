@@ -98,7 +98,7 @@ export async function initCommand(args, { cwd, stdout, stderr }) {
     stdout.write(`Initialized Antigravity Superpowers profile at ${agentDir}\n`);
     stdout.write("Next step: bash .agent/tests/run-tests.sh\n");
     stdout.write(
-      "Note: docs/plans/task.md is created at runtime by skills when task tracking starts.\n",
+      "Note: .artifacts/plans/task.md is created at runtime by skills when task tracking starts.\n",
     );
     return 0;
   } catch (error) {

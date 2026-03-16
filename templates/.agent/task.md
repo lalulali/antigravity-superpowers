@@ -2,7 +2,7 @@
 
 This file is a template/reference for task tracking behavior.
 
-Live tracking must happen in `<project-root>/docs/plans/task.md`.
+Live tracking must happen in `<project-root>/.artifacts/plans/task.md`.
 
 The live task file should contain only task list rows (no instructions or prose).
 

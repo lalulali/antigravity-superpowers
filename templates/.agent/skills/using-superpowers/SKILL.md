@@ -33,7 +33,7 @@ digraph skill_flow {
     "Load skill via view_file" [shape=box];
     "Announce: 'Using [skill] to [purpose]'" [shape=box];
     "Has checklist?" [shape=diamond];
-    "Update project-root docs/plans/task.md per checklist item" [shape=box];
+    "Update project-root .artifacts/plans/task.md per checklist item" [shape=box];
     "Follow skill exactly" [shape=box];
     "Respond (including clarifications)" [shape=doublecircle];
 
@@ -47,13 +47,13 @@ digraph skill_flow {
     "Might any skill apply?" -> "Respond (including clarifications)" [label="definitely not"];
     "Load skill via view_file" -> "Announce: 'Using [skill] to [purpose]'";
     "Announce: 'Using [skill] to [purpose]'" -> "Has checklist?";
-    "Has checklist?" -> "Update project-root docs/plans/task.md per checklist item" [label="yes"];
+    "Has checklist?" -> "Update project-root .artifacts/plans/task.md per checklist item" [label="yes"];
     "Has checklist?" -> "Follow skill exactly" [label="no"];
-    "Update project-root docs/plans/task.md per checklist item" -> "Follow skill exactly";
+    "Update project-root .artifacts/plans/task.md per checklist item" -> "Follow skill exactly";
 }
 ```
 
-If the tracker file is missing, create `<project-root>/docs/plans/task.md` as a table-only task list.
+If the tracker file is missing, create `<project-root>/.artifacts/plans/task.md` as a table-only task list.
 
 ## Red Flags
 

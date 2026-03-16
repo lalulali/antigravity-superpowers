@@ -651,7 +651,7 @@ Deploying untested skills = deploying untested code. It's a violation of quality
 
 ## Skill Creation Checklist (TDD Adapted)
 
-**IMPORTANT: Update `<project-root>/docs/plans/task.md` for EACH checklist item below (table-only tracker, no instructions).**
+**IMPORTANT: Update `<project-root>/.artifacts/plans/task.md` for EACH checklist item below (table-only tracker, no instructions).**
 
 **RED Phase - Write Failing Test:**
 

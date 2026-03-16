@@ -14,7 +14,7 @@ Assume the executing engineer needs absolute clarity and detailed scope.
 
 **Announce at start:** "I'm using the writing-requirements skill to document detailed requirements."
 
-**Save documents to:** `docs/plans/<order-number>-<feature-name>/requirements.md`
+**Save documents to:** `.artifacts/plans/<order-number>-<feature-name>/requirements.md`
 
 ## The Process
 

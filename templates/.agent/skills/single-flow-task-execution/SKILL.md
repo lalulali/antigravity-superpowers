@@ -19,7 +19,7 @@ Antigravity does NOT support parallel coding subagents. All work happens in a si
 2. **One execution thread only** — no parallel dispatch.
 3. **No parallel coding subagents** — Antigravity does not have `Task(...)`.
 4. **Browser automation** may use `browser_subagent` in isolated steps.
-5. **Track progress** by updating `<project-root>/docs/plans/<order-number>-<feature-name>/task.md` at each state change (table-only tracker).
+5. **Track progress** by updating `<project-root>/.artifacts/plans/<order-number>-<feature-name>/task.md` at each state change (table-only tracker).
 6. **Use `task_boundary`** to clearly delineate each unit of work.
 
 ## When to Use
@@ -81,7 +81,7 @@ digraph process {
         "Run code quality review (./code-quality-reviewer-prompt.md)" [shape=box];
         "Code quality approved?" [shape=diamond];
         "Fix quality issues" [shape=box];
-        "Mark task complete in docs/plans/<order-number>-<feature-name>/task.md" [shape=box];
+        "Mark task complete in .artifacts/plans/<order-number>-<feature-name>/task.md" [shape=box];
     }
 
     "Read plan, extract all tasks with full text, note context" [shape=box];
@@ -102,8 +102,8 @@ digraph process {
     "Run code quality review (./code-quality-reviewer-prompt.md)" -> "Code quality approved?";
     "Code quality approved?" -> "Fix quality issues" [label="no"];
     "Fix quality issues" -> "Run code quality review (./code-quality-reviewer-prompt.md)" [label="re-review"];
-    "Code quality approved?" -> "Mark task complete in docs/plans/<order-number>-<feature-name>/task.md" [label="yes"];
-    "Mark task complete in docs/plans/<order-number>-<feature-name>/task.md" -> "More tasks remain?";
+    "Code quality approved?" -> "Mark task complete in .artifacts/plans/<order-number>-<feature-name>/task.md" [label="yes"];
+    "Mark task complete in .artifacts/plans/<order-number>-<feature-name>/task.md" -> "More tasks remain?";
     "More tasks remain?" -> "Execute implementation (./implementer-prompt.md)" [label="yes"];
     "More tasks remain?" -> "Run final code review for entire implementation" [label="no"];
     "Run final code review for entire implementation" -> "Use finishing-a-development-branch skill";
@@ -189,7 +189,7 @@ At logical boundaries (after each task, at major milestones), report:
 - **What verification ran** — test results, lint results
 - **What remains** — remaining tasks, known issues
 
-Update `docs/plans/<order-number>-<feature-name>/task.md` with current status.
+Update `.artifacts/plans/<order-number>-<feature-name>/task.md` with current status.
 
 ## Common Mistakes
 
@@ -223,9 +223,9 @@ Update `docs/plans/<order-number>-<feature-name>/task.md` with current status.
 ```
 You: I'm using single-flow-task-execution to execute this plan.
 
-[Read plan file: docs/plans/feature-plan.md]
+[Read plan file: .artifacts/plans/feature-plan.md]
 [Extract all 5 tasks with full text and context]
-[Update docs/plans/<order-number>-<feature-name>/task.md with all tasks as 'not_started']
+[Update .artifacts/plans/<order-number>-<feature-name>/task.md with all tasks as 'not_started']
 
 --- Task 1: Hook installation script ---
 
@@ -247,7 +247,7 @@ Spec review: Spec compliant — all requirements met, nothing extra
 [Run code quality review following ./code-quality-reviewer-prompt.md]
 Code review: Strengths: Good test coverage, clean. Issues: None. Approved.
 
-[Mark Task 1 complete in docs/plans/<order-number>-<feature-name>/task.md]
+[Mark Task 1 complete in .artifacts/plans/<order-number>-<feature-name>/task.md]
 
 --- Task 2: Recovery modes ---
 
@@ -276,7 +276,7 @@ Code review: Issue (Important): Magic number (100) should be a constant
 [Run code quality review again]
 Code review: Approved
 
-[Mark Task 2 complete in docs/plans/<order-number>-<feature-name>/task.md]
+[Mark Task 2 complete in .artifacts/plans/<order-number>-<feature-name>/task.md]
 
 ... [Continue through remaining tasks] ...
 
@@ -320,7 +320,7 @@ Done!
 
 Before claiming all work is done:
 
-1. Ensure all task entries in `docs/plans/<order-number>-<feature-name>/task.md` are `done` or `cancelled`
+1. Ensure all task entries in `.artifacts/plans/<order-number>-<feature-name>/task.md` are `done` or `cancelled`
 2. Run full test/validation command
 3. Verify no regressions across all tasks
 4. Summarize evidence (test output, review approvals)

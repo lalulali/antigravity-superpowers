@@ -59,7 +59,7 @@ for file in "${required_files[@]}"; do
   require_file "$file"
 done
 
-require_absent "$ROOT_DIR/docs/plans/task.md"
+require_absent "$ROOT_DIR/.artifacts/plans/task.md"
 
 required_skills=(
   "brainstorming"
@@ -141,7 +141,7 @@ mapping_checks=(
   'Task.*task_boundary'
   'browser_subagent'
   'Skill.*view_file'
-  'TodoWrite.*docs/plans/.*task\.md'
+  'TodoWrite.*.artifacts/plans/.*task\.md'
   'run_command'
   'grep_search'
   'find_by_name'
