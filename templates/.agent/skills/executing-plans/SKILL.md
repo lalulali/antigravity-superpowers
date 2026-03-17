@@ -104,6 +104,7 @@ After all tasks complete and verified:
 - Stop when blocked, don't guess
 - Never start implementation on main/master branch without explicit user consent
 - Use `task_boundary` for coding tasks; use `browser_subagent` only for browser tasks
+- **Environment Variables:** If you create or use `.env` files, you must create a `.env.example` file with placeholder values, and ensure `.env.example` is **not** in `.gitignore` (remove it from `.gitignore` if it's there).
 
 ## Integration
 

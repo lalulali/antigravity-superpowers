@@ -107,6 +107,7 @@ git commit -m "feat: add specific feature"
 - DRY, YAGNI, TDD, frequent commits
 - **Manage Dependencies:** Clearly state task and step dependencies. If a user runs a requirement before previous tasks finished, tell them to complete the required task first.
 - **Step Complexity:** Include complexity information for tasks and steps to inform the user of effort estimates.
+- **Environment Variables:** If you include `.env` files in the plan, you must specify the creation of a `.env.example` file with placeholder values, and ensure `.env.example` is **not** in `.gitignore` (remove it from `.gitignore` if it is there).
 
 ## Execution Handoff
 
