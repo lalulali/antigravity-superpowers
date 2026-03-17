@@ -37,15 +37,18 @@ For each task:
 4. Run verifications as specified
 5. Mark as completed
 
-Design artifact:
+Design artifact and expectations:
 
-1. Write design system documentation — save to docs/design-system/`<design system name>`.md and commit
-2. Documentation should be micro
-3. You are only allowed to create the document if it doesn't exist and modified if it already exist
-4. You are not allowed to modified unrelated content except the one that you want to add or modified
-5. treat this document as a living artifact and the rest of the document. rewrite from scratch & oversimplify the document is not allowed and breaking the rules
-6. The content should be splitted into different section e.g. button, color, typography, etc.
-7. any changes to this document will reflect all pages.
+1. Maintain a consistent design language across all pages.
+2. Create reusable components for future features (e.g., UI building blocks) so that 1 change in 1 component is automatically reflected in all pages.
+3. Only change what really matters and do not touch anything unrelated. Focus strictly on the Job To Be Done (JTBD).
+4. Write design system documentation — save to docs/design-system/`<design system name>`.md and commit.
+5. Documentation should be micro.
+6. You are only allowed to create the document if it doesn't exist and modified if it already exist.
+7. You are not allowed to modified unrelated content except the one that you want to add or modified.
+8. Treat this document as a living artifact and the rest of the document. Rewrite from scratch & oversimplify the document is not allowed and breaking the rules.
+9. The content should be splitted into different section e.g. button, color, typography, etc.
+10. Any changes to this document will reflect all pages.
 
 ### Step 3: Report
 

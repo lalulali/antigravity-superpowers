@@ -145,6 +145,14 @@ After all tasks:
 - Check for conflicts between task changes
 - Run final code review on entire implementation
 
+## Implementation & Design Principles
+
+When executing tasks, strictly adhere to the following principles:
+
+1. **Consistent Design Language:** Maintain a consistent design language across the page.
+2. **Reusable Components:** Create reusable components for future features. 1 change in 1 component should be automatically reflected in all pages.
+3. **Focus on JTBD:** Only change what really matters and do not touch anything unrelated. Focus strictly on the Job To Be Done (JTBD).
+
 ## Task Brief Structure
 
 For each task, prepare:

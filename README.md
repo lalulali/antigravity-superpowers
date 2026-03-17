@@ -181,6 +181,7 @@ Infrastructure added to make the profile work as a first-class Antigravity citiz
 - `.agent/workflows/` — workflow entrypoints (`brainstorm.md`, `execute-plan.md`, `write-plan.md`)
 - `.agent/agents/code-reviewer.md` — reviewer agent profile
 - `.agent/tests/` — automated profile validation (skill presence, frontmatter, legacy pattern detection)
+- **Design System Awareness** — built-in principles for consistent design language and reusable components when executing tasks
 
 > **Full Diff:** See [ANTIGRAVITY-PORT-DIFFERENCES.md](ANTIGRAVITY-PORT-DIFFERENCES.md) for the exhaustive skill-by-skill comparison and [CURRENT-FLOW.md](CURRENT-FLOW.md) for the complete workflow diagram.
 

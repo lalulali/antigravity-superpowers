@@ -16,6 +16,12 @@ task_boundary:
 
     [Scene-setting: where this fits, dependencies, architectural context]
 
+    ## Design & Implementation Principles
+    
+    - **Consistent Design Language:** Maintain a consistent design language across the page.
+    - **Reusable Components:** Create reusable components for future features. 1 change in 1 component should be automatically reflected in all pages.
+    - **Focus on JTBD:** Only change what really matters and do not touch anything unrelated. Focus strictly on the Job To Be Done (JTBD).
+
     ## Before You Begin
 
     If you have questions about:
